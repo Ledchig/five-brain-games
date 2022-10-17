@@ -7,11 +7,14 @@ console.log(`Hello, ${name}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 // Проверка на четность.
-const checkEvenNumber = (number) => number % 2 === 0;
+function checkEvenNumber(number) {
+  return number % 2 === 0;
+}
 // Генерация случайного числа.
-const letRandomNum = () => Math.round(Math.random() * 100);
-// Счетчик верных ответов.
-let sumCorrectAnswer = 0;
+function letRandomNum() {
+  return Math.round(Math.random() * 100);
+}
+
 // Генерируем три вопроса.
 const quest1 = letRandomNum();
 const quest2 = letRandomNum();
@@ -24,7 +27,9 @@ const correctAnswer3 = checkEvenNumber(quest3) ? 'yes' : 'no';
 const arrayWithQuests = [[quest1, correctAnswer1], [quest2, correctAnswer2],
   [quest3, correctAnswer3]];
 // Логика вопросов, получения ответов и их сравнение.
-const askQuestAndCheckAnswer = (questsAndCorrectAnswers) => {
+function askQuestAndCheckAnswer(questsAndCorrectAnswers) {
+  // Счетчик верных ответов.
+  let sumCorrectAnswer = 0;
   for (let i = 0; i < questsAndCorrectAnswers.length; i += 1) {
     console.log(`Question: ${questsAndCorrectAnswers[i][0]}`);
     const answer = readlineSync.question('Your answer:');
@@ -41,8 +46,8 @@ const askQuestAndCheckAnswer = (questsAndCorrectAnswers) => {
   } else {
     console.log(`Let's try again, ${name}`);
   }
-};
+}
 
 askQuestAndCheckAnswer(arrayWithQuests);
 
-export default askQuestAndCheckAnswer;
+export { letRandomNum, askQuestAndCheckAnswer };
