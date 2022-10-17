@@ -8,19 +8,22 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 // Проверка на четность.
 const checkEvenNumber = (number) => number % 2 === 0;
+// Генерация случайного числа.
 const letRandomNum = () => Math.round(Math.random() * 100);
+// Счетчик верных ответов.
 let sumCorrectAnswer = 0;
 // Генерируем три вопроса.
 const quest1 = letRandomNum();
 const quest2 = letRandomNum();
 const quest3 = letRandomNum();
+// Находим верные ответы для вопросов.
 const correctAnswer1 = checkEvenNumber(quest1) ? 'yes' : 'no';
 const correctAnswer2 = checkEvenNumber(quest2) ? 'yes' : 'no';
 const correctAnswer3 = checkEvenNumber(quest3) ? 'yes' : 'no';
 // Создаем массив с вопросами и верными ответами.
 const arrayWithQuests = [[quest1, correctAnswer1], [quest2, correctAnswer2],
   [quest3, correctAnswer3]];
-// Сравнение ответов.
+// Логика вопросов, получения ответов и их сравнение.
 const askQuestAndCheckAnswer = (questsAndCorrectAnswers) => {
   for (let i = 0; i < questsAndCorrectAnswers.length; i += 1) {
     console.log(`Question: ${questsAndCorrectAnswers[i][0]}`);
