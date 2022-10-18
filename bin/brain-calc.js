@@ -8,7 +8,7 @@ const taskOfGame = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
 // Получение случайной операции.
-function getRandomOperations(arrayWithOperations) {
+function getRandomOperation(arrayWithOperations) {
   const rand = Math.floor(Math.random() * arrayWithOperations.length);
   return operations[rand];
 }
@@ -19,29 +19,35 @@ function getRandomNum() {
 }
 
 // Логика получения верного ответа.
-function solveExpression(expression) {
+function solveExpression(firstNumber, secondNumber, operation) {
   let correctAnswer = 0;
-  if (expression[1] === '+') {
-    correctAnswer = Number(expression[0]) + Number(expression[2]);
-    return correctAnswer.toString();
-  } if (expression[1] === '-') {
-    correctAnswer = Number(expression[0]) - Number(expression[2]);
-    return correctAnswer.toString();
+  switch (operation) {
+    case '+':
+      correctAnswer = firstNumber + secondNumber;
+      return correctAnswer.toString();
+    case '-':
+      correctAnswer = firstNumber - secondNumber;
+      return correctAnswer.toString();
+    default:
+      correctAnswer = firstNumber * secondNumber;
+      return correctAnswer.toString();
   }
-  correctAnswer = Number(expression[0]) * Number(expression[2]);
-  return correctAnswer.toString();
 }
 
 // Генерируем массив с вопросами и ответами.
 function getQuestsAndAnswers() {
   let quest = '';
   let answer = '';
-  let expression = [];
+  let firstNumber = 0;
+  let secondNumber = 0;
+  let operation = '';
   const questsAndAnswers = [];
-  for (let i = 0; 0 < 3; i += 1) {
-    expression = [[getRandomNum()], [getRandomOperations(operations)], [getRandomNum()]];
-    quest = `${expression[0]} ${expression[1]} ${expression[2]} = ?`;
-    answer = solveExpression(expression);
+  for (let i = 0; i < 3; i += 1) {
+    firstNumber = getRandomNum();
+    secondNumber = getRandomNum();
+    operation = getRandomOperation(operations);
+    quest = `${firstNumber} ${operation} ${secondNumber} = ?`;
+    answer = solveExpression(firstNumber, secondNumber, operation);
     questsAndAnswers.push([quest, answer]);
   }
   return questsAndAnswers;
