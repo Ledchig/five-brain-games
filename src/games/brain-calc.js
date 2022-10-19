@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-import brainGame from '../src/index.js';
-
 // Задача игры.
-const taskOfGame = 'What is the result of the expression?';
+export const taskOfGame = 'What is the result of the expression?';
 
 // Определяем массив с возможными операциями.
 const operations = ['+', '-', '*'];
@@ -35,7 +32,7 @@ function solveExpression(firstNumber, secondNumber, operation) {
 }
 
 // Генерируем массив с вопросами и ответами.
-function getQuestsAndAnswers() {
+export function getQuestsAndAnswers() {
   let quest = '';
   let answer = '';
   let firstNumber = 0;
@@ -52,5 +49,3 @@ function getQuestsAndAnswers() {
   }
   return questsAndAnswers;
 }
-
-brainGame(taskOfGame, getQuestsAndAnswers());

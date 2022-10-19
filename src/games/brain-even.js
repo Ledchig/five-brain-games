@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-import brainGame from '../src/index.js';
-
 // Задача игры.
-const taskOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+export const taskOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // Проверка на четность.
 function checkEvenNumber(number) {
@@ -14,7 +11,7 @@ function getRandomNum() {
 }
 
 // Генерируем массив вопросов и ответов.
-function getQuestsAndAnswers() {
+export function getQuestsAndAnswers() {
   let quest = 0;
   let answer = '';
   const questsAndAnswers = [];
@@ -25,5 +22,3 @@ function getQuestsAndAnswers() {
   }
   return questsAndAnswers;
 }
-
-brainGame(taskOfGame, getQuestsAndAnswers());
