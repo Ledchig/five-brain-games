@@ -3,10 +3,11 @@
 <a href="https://codeclimate.com/github/Ledchig/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/ed894a25872a99c47af4/maintainability" /></a>
 
 <h3>Brain-games:</h3>
-These are five console games. To choose one of them, write `brain-even`, `brain-calc`, `brain-gcd`, `brain-prime` or `brain-progression` in your console. Answer the questions and by typing three correct answers without mistakes you will win! 
+These are five console games. To choose one of them, write `brain-even`, `brain-calc`, `brain-gcd`, `brain-prime` or `brain-progression` in your console. Answer the questions and by typing three correct answers without mistakes you will win!
+
 **GOOD LUCK!**
 
-<h3>Installation:</h3>
+<h3>Installation</h3>
 Clone this repository on your machine and write "sudo make install" in the project directory.
 
 <a href="https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd" target="_blank"><img src="https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd.svg" /></a>
