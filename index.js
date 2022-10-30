@@ -13,7 +13,7 @@ function brainGame(taskOfGame, questsAndAnswers) {
   let sumCorrectAnswer = 0;
   for (let i = 0; i < questsAndAnswers.length; i += 1) {
     console.log(`Question: ${questsAndAnswers[i][0]}`);
-    const answer = readlineSync.question('Your answer:');
+    const answer = readlineSync.question('Your answer: ');
     if (answer === questsAndAnswers[i][1]) {
       console.log('Correct!');
       sumCorrectAnswer += 1;
