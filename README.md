@@ -4,4 +4,4 @@
 
 Установка:
 Склонируйте репозиторий и находясь в корневой директории выполните команду "sudo make install".
-<script id="asciicast-IYTpFJo9QMPJUgUO7NugWQ3vd" src="https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd.js" async></script>
+https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd
