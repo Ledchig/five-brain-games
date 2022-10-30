@@ -4,4 +4,4 @@
 
 Установка:
 Склонируйте репозиторий и находясь в корневой директории выполните команду "sudo make install".
-https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd
+<a href="https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd" target="_blank"><img src="https://asciinema.org/a/IYTpFJo9QMPJUgUO7NugWQ3vd.svg" /></a>
