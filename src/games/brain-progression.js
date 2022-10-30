@@ -28,7 +28,8 @@ export function getQuestsAndAnswers() {
     answer = `${arrayForQuest[numOfElementIsHide - 1] + step}`;
     arrayForQuest[numOfElementIsHide] = '..';
     // Превращаем его в строку для вопроса.
-    for (let a = 0; a < 10; a += 1) {
+    quest = `${arrayForQuest[0]}`;
+    for (let a = 1; a < 10; a += 1) {
       quest = `${quest} ${arrayForQuest[a]}`;
     }
     questsAndAnswers.push([quest, answer]);
