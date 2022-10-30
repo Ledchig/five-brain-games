@@ -16,7 +16,7 @@ export function getQuestsAndAnswers() {
     // Первое число.
     let x = getRandomNum();
     // Создаем массив для вопросов.
-    for (let i = 0; i < 10; i += 1) {
+    for (let e = 0; e < 10; e += 1) {
       arrayForQuest.push(x);
       x += step;
     }
@@ -28,7 +28,7 @@ export function getQuestsAndAnswers() {
     answer = `${arrayForQuest[numOfElementIsHide - 1] + step}`;
     arrayForQuest[numOfElementIsHide] = '..';
     // Превращаем его в строку для вопроса.
-    for (let i = 0; i < 10; i += 1) {
+    for (let a = 0; a < 10; a += 1) {
       quest = `${quest} ${arrayForQuest[i]}`;
     }
     questsAndAnswers.push([quest, answer]);
