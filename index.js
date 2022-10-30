@@ -25,7 +25,7 @@ function brainGame(taskOfGame, questsAndAnswers) {
   if (sumCorrectAnswer === 3) {
     console.log(`Congratulations, ${name}!`);
   } else {
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
   }
 }
 
