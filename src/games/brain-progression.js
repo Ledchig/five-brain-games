@@ -29,7 +29,7 @@ export function getQuestsAndAnswers() {
     arrayForQuest[numOfElementIsHide] = '..';
     // Превращаем его в строку для вопроса.
     for (let a = 0; a < 10; a += 1) {
-      quest = `${quest} ${arrayForQuest[i]}`;
+      quest = `${quest} ${arrayForQuest[a]}`;
     }
     questsAndAnswers.push([quest, answer]);
   }
