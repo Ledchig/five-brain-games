@@ -25,7 +25,7 @@ export function getQuestsAndAnswers() {
     if (numOfElementIsHide === 0 || numOfElementIsHide === 1) {
       numOfElementIsHide += 2;
     }
-    answer = `${arrayForQuest[numOfElementIsHide - 1] - arrayForQuest[numOfElementIsHide - 2]}`;
+    answer = `${arrayForQuest[numOfElementIsHide - 1] + step}`;
     arrayForQuest[numOfElementIsHide] = '..';
     // Превращаем его в строку для вопроса.
     for (let i = 0; i < 10; i += 1) {
