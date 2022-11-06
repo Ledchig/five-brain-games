@@ -2,6 +2,9 @@
 
 import readlineSync from 'readline-sync';
 
+// Количество раундов.
+const countRounds = 3;
+
 function brainGame(taskOfGame, questsAndAnswers) {
   console.log('Welcome, to the   Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -10,23 +13,18 @@ function brainGame(taskOfGame, questsAndAnswers) {
 
   // Логика вопросов, получения ответов и их сравнение.
   // Счетчик верных ответов.
-  let sumCorrectAnswer = 0;
-  for (let i = 0; i < questsAndAnswers.length; i += 1) {
-    console.log(`Question: ${questsAndAnswers[i][0]}`);
+  for (let i = 0; i <= countRounds; i += 1) {
+    const [question, correctAnswer] = questsAndAnswers[i];
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === questsAndAnswers[i][1]) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
-      sumCorrectAnswer += 1;
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${questsAndAnswers[i][1]}.`);
-      break;
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${questsAndAnswers[i]}.`);
+      return console.log(`Let's try again, ${name}!`);
     }
   }
-  if (sumCorrectAnswer === 3) {
-    console.log(`Congratulations, ${name}!`);
-  } else {
-    console.log(`Let's try again, ${name}!`);
-  }
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export default brainGame;
