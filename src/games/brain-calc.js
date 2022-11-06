@@ -1,3 +1,5 @@
+import getRandomNumber from "../getRandomNumber.js";
+
 // Задача игры.
 export const taskOfGame = 'What is the result of the expression?';
 
@@ -8,11 +10,6 @@ const operations = ['+', '-', '*'];
 function getRandomOperation(arrayWithOperations) {
   const rand = Math.floor(Math.random() * arrayWithOperations.length);
   return operations[rand];
-}
-
-// Генерация случайного числа.
-function getRandomNum() {
-  return Math.round(Math.random() * 10);
 }
 
 // Логика получения верного ответа.
@@ -40,8 +37,8 @@ export function getQuestsAndAnswers() {
   let operation = '';
   const questsAndAnswers = [];
   for (let i = 0; i < 3; i += 1) {
-    firstNumber = getRandomNum();
-    secondNumber = getRandomNum();
+    firstNumber = getRandomNumber(0, 10);
+    secondNumber = getRandomNumber(0, 10);
     operation = getRandomOperation(operations);
     quest = `${firstNumber} ${operation} ${secondNumber} = ?`;
     answer = solveExpression(firstNumber, secondNumber, operation);

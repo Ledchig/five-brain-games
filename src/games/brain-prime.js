@@ -1,10 +1,7 @@
+import getRandomNumber from "../getRandomNumber.js";
+
 // Задача игры
 export const taskOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".ind the greatest common divisor of given numbers.';
-
-// Генерация случайного числа.
-function getRandomNum() {
-  return Math.round(Math.random() * 100);
-}
 
 // Проверка на простое число.
 function isTheNumberPrime(number) {
@@ -22,7 +19,7 @@ export function getQuestsAndAnswers() {
   let answer = '';
   const questsAndAnswers = [];
   for (let i = 0; i < 3; i += 1) {
-    quest = getRandomNum();
+    quest = getRandomNumber(0, 100);
     answer = isTheNumberPrime(quest) ? 'yes' : 'no';
     questsAndAnswers.push([quest, answer]);
   }

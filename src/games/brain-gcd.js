@@ -1,10 +1,7 @@
+import getRandomNumber from "../getRandomNumber.js";
+
 // Задача игры
 export const taskOfGame = 'Find the greatest common divisor of given numbers.';
-
-// Генерация случайного числа.
-function getRandomNum() {
-  return Math.round(Math.random() * 100);
-}
 
 // Получение верного ответа
 function getAnswer(firstNumber, secondNumber) {
@@ -36,8 +33,8 @@ export function getQuestsAndAnswers() {
   let answer = '';
   const questsAndAnswers = [];
   for (let i = 0; i < 3; i += 1) {
-    firstNumber = getRandomNum();
-    secondNumber = getRandomNum();
+    firstNumber = getRandomNumber(0, 100);
+    secondNumber = getRandomNumber(0, 100);
     quest = `${firstNumber} ${secondNumber}`;
     answer = `${getAnswer(firstNumber, secondNumber)}`;
     questsAndAnswers.push([quest, answer]);

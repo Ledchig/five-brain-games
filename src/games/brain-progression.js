@@ -1,9 +1,7 @@
+import getRandomNumber from "../getRandomNumber.js";
+
 // Задача игры.
 export const taskOfGame = 'What number is missing in the progression?';
-
-function getRandomNum() {
-  return Math.round(Math.random() * 10);
-}
 
 // Получаем ответы и вопросы.
 export function getQuestsAndAnswers() {
@@ -12,16 +10,16 @@ export function getQuestsAndAnswers() {
     const arrayForQuest = [];
     let quest = '';
     let answer = '';
-    const step = getRandomNum();
+    const step = getRandomNumber(0, 10);
     // Первое число.
-    let x = getRandomNum();
+    let x = getRandomNumber(0, 10);
     // Создаем массив для вопросов.
     for (let e = 0; e < 10; e += 1) {
       arrayForQuest.push(x);
       x += step;
     }
     // Определяем какое число прячем и записываем его в ответ.
-    let numOfElementIsHide = getRandomNum();
+    let numOfElementIsHide = getRandomNumber(0, 10);
     if (numOfElementIsHide === 0 || numOfElementIsHide === 1) {
       numOfElementIsHide += 2;
     }
