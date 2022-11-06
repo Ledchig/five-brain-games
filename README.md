@@ -4,13 +4,20 @@
 
 <h3>Brain-games:</h3>
 These are five console games:
+
 • Brain-even - you need to determine the number for parity.
+
 • Brain-calc - you need to calculate a pair of numbers.
+
 • Brain-gcd - you need to calculate and output the greatest common divisor of these numbers.
+
 • Brain-prime - you need to determine a prime number or not a prime number.
+
 • Brain-progression - you need to identify the hidden number.
 
+
 Answer the questions and by typing three correct answers without mistakes you will win!
+
 
 **GOOD LUCK!**
 
