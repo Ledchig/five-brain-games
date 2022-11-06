@@ -1,4 +1,5 @@
-import getRandomNumber from "../getRandomNumber.js";
+import getRandomNumber from '../getRandomNumber.js';
+import { countRounds } from '../index.js';
 
 // Задача игры.
 export const taskOfGame = 'What is the result of the expression?';
@@ -36,7 +37,7 @@ export function getQuestsAndAnswers() {
   let secondNumber = 0;
   let operation = '';
   const questsAndAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < countRounds; i += 1) {
     firstNumber = getRandomNumber(0, 10);
     secondNumber = getRandomNumber(0, 10);
     operation = getRandomOperation(operations);

@@ -1,10 +1,11 @@
-import getRandomNumber from "../getRandomNumber.js";
+import getRandomNumber from '../getRandomNumber.js';
+import { countRounds } from '../index.js';
 
 // Задача игры.
 export const taskOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // Проверка на четность.
-function checkEvenNumber(number) {
+function isEven(number) {
   return number % 2 === 0;
 }
 
@@ -13,9 +14,9 @@ export function getQuestsAndAnswers() {
   let quest = 0;
   let answer = '';
   const questsAndAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < countRounds; i += 1) {
     quest = getRandomNumber(0, 1000);
-    answer = checkEvenNumber(quest) ? 'yes' : 'no';
+    answer = isEven(quest) ? 'yes' : 'no';
     questsAndAnswers.push([quest, answer]);
   }
   return questsAndAnswers;

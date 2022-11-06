@@ -1,4 +1,5 @@
-import getRandomNumber from "../getRandomNumber.js";
+import getRandomNumber from '../getRandomNumber.js';
+import { countRounds } from '../index.js';
 
 // Задача игры
 export const taskOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".ind the greatest common divisor of given numbers.';
@@ -18,7 +19,7 @@ export function getQuestsAndAnswers() {
   let quest = 0;
   let answer = '';
   const questsAndAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < countRounds; i += 1) {
     quest = getRandomNumber(0, 100);
     answer = isTheNumberPrime(quest) ? 'yes' : 'no';
     questsAndAnswers.push([quest, answer]);
