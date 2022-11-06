@@ -13,14 +13,14 @@ function brainGame(taskOfGame, questsAndAnswers) {
 
   // Логика вопросов, получения ответов и их сравнение.
   // Счетчик верных ответов.
-  for (let i = 0; i <= countRounds; i += 1) {
+  for (let i = 0; i < countRounds; i += 1) {
     const [question, correctAnswer] = questsAndAnswers[i];
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${questsAndAnswers[i]}.`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       return console.log(`Let's try again, ${name}!`);
     }
   }
