@@ -37,7 +37,7 @@ function getQuestAndAnswer() {
   for (let a = 1; a < arrayForQuest.length; a += 1) {
     quest = `${quest} ${arrayForQuest[a]}`;
   }
-  questAndAnswer.push([quest, answer]);
+  questAndAnswer.push(quest, answer);
 
   return questAndAnswer;
 }

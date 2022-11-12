@@ -22,7 +22,7 @@ function getQuestAndAnswer() {
 
   quest = getRandomNumber(0, 100);
   answer = isTheNumberPrime(quest) ? 'yes' : 'no';
-  questAndAnswer.push([quest, answer]);
+  questAndAnswer.push(quest, answer);
   return questAndAnswer;
 }
 

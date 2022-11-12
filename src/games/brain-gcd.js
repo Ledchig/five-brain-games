@@ -37,7 +37,7 @@ function getQuestAndAnswer() {
   secondNumber = getRandomNumber(0, 100);
   quest = `${firstNumber} ${secondNumber}`;
   answer = `${getGcd(firstNumber, secondNumber)}`;
-  questAndAnswer.push([quest, answer]);
+  questAndAnswer.push(quest, answer);
 
   return questAndAnswer;
 }
