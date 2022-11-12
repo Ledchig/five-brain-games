@@ -28,8 +28,8 @@ function getQuestAndAnswer() {
   let quest = '';
   let answer = '';
   const questAndAnswer = [];
-  firstNumber = getRandomNumber(0, 50);
-  secondNumber = getRandomNumber(0, 50);
+  firstNumber = getRandomNumber(1, 50);
+  secondNumber = getRandomNumber(1, 50);
   quest = `${firstNumber} ${secondNumber}`;
   answer = `${getGcd(firstNumber, secondNumber)}`;
   questAndAnswer.push(quest, answer);
