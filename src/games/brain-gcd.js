@@ -8,12 +8,7 @@ const description = 'Find the greatest common divisor of given numbers.';
 function getGcd(firstNumber, secondNumber) {
   let a = 0;
   let b = 0;
-  let divisor = 0;
-  if (firstNumber > secondNumber) {
-    divisor = Math.round(firstNumber / 2);
-  } else {
-    divisor = Math.round(secondNumber / 2);
-  }
+  let divisor = firstNumber > secondNumber ? secondNumber : firstNumber;
 
   while (divisor > 0) {
     a = firstNumber % divisor;
@@ -33,8 +28,8 @@ function getQuestAndAnswer() {
   let quest = '';
   let answer = '';
   const questAndAnswer = [];
-  firstNumber = getRandomNumber(0, 100);
-  secondNumber = getRandomNumber(0, 100);
+  firstNumber = getRandomNumber(0, 50);
+  secondNumber = getRandomNumber(0, 50);
   quest = `${firstNumber} ${secondNumber}`;
   answer = `${getGcd(firstNumber, secondNumber)}`;
   questAndAnswer.push(quest, answer);
