@@ -1,8 +1,8 @@
 import getRandomNumber from '../getRandomNumber.js';
-import { countRounds } from '../index.js';
+import gameEngine from '../index.js';
 
 // Задача игры.
-export const taskOfGame = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 // Определяем массив с возможными операциями.
 const operations = ['+', '-', '*'];
@@ -30,20 +30,23 @@ function solveExpression(firstNumber, secondNumber, operation) {
 }
 
 // Генерируем массив с вопросами и ответами.
-export function getQuestsAndAnswers() {
+function getQuestAndAnswer() {
   let quest = '';
   let answer = '';
   let firstNumber = 0;
   let secondNumber = 0;
   let operation = '';
-  const questsAndAnswers = [];
-  for (let i = 0; i < countRounds; i += 1) {
-    firstNumber = getRandomNumber(0, 10);
-    secondNumber = getRandomNumber(0, 10);
-    operation = getRandomOperation(operations);
-    quest = `${firstNumber} ${operation} ${secondNumber} = ?`;
-    answer = solveExpression(firstNumber, secondNumber, operation);
-    questsAndAnswers.push([quest, answer]);
-  }
-  return questsAndAnswers;
+  const questAndAnswer = [];
+  firstNumber = getRandomNumber(0, 10);
+  secondNumber = getRandomNumber(0, 10);
+  operation = getRandomOperation(operations);
+  quest = `${firstNumber} ${operation} ${secondNumber} = ?`;
+  answer = solveExpression(firstNumber, secondNumber, operation);
+  questAndAnswer.push(quest, answer);
+
+  return questAndAnswer;
 }
+
+export default () => {
+  gameEngine(description, getQuestAndAnswer);
+};

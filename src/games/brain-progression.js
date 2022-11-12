@@ -1,8 +1,8 @@
 import getRandomNumber from '../getRandomNumber.js';
-import { countRounds } from '../index.js';
+import gameEngine from '../index.js';
 
 // Задача игры.
-export const taskOfGame = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 // Создание массива с прогрессией.
 function getArrayForQuest() {
@@ -19,26 +19,29 @@ function getArrayForQuest() {
 }
 
 // Получаем ответы и вопросы.
-export function getQuestsAndAnswers() {
-  const questsAndAnswers = [];
-  for (let i = 0; i < countRounds; i += 1) {
-    const arrayForQuest = getArrayForQuest();
-    let quest = '';
-    let answer = '';
-    // Определяем какое число прячем и записываем его в ответ.
-    let numOfElementIsHide = getRandomNumber(0, arrayForQuest.length);
-    if (numOfElementIsHide === 0 || numOfElementIsHide === 1) {
-      numOfElementIsHide += 2;
-    }
-    const step = arrayForQuest[1] - arrayForQuest[0];
-    answer = `${arrayForQuest[numOfElementIsHide - 1] + step}`;
-    arrayForQuest[numOfElementIsHide] = '..';
-    // Превращаем его в строку для вопроса.
-    quest = `${arrayForQuest[0]}`;
-    for (let a = 1; a < arrayForQuest.length; a += 1) {
-      quest = `${quest} ${arrayForQuest[a]}`;
-    }
-    questsAndAnswers.push([quest, answer]);
+function getQuestAndAnswer() {
+  const questAndAnswer = [];
+  const arrayForQuest = getArrayForQuest();
+  let quest = '';
+  let answer = '';
+  // Определяем какое число прячем и записываем его в ответ.
+  let numOfElementIsHide = getRandomNumber(0, arrayForQuest.length);
+  if (numOfElementIsHide === 0 || numOfElementIsHide === 1) {
+    numOfElementIsHide += 2;
   }
-  return questsAndAnswers;
+  const step = arrayForQuest[1] - arrayForQuest[0];
+  answer = `${arrayForQuest[numOfElementIsHide - 1] + step}`;
+  arrayForQuest[numOfElementIsHide] = '..';
+  // Превращаем его в строку для вопроса.
+  quest = `${arrayForQuest[0]}`;
+  for (let a = 1; a < arrayForQuest.length; a += 1) {
+    quest = `${quest} ${arrayForQuest[a]}`;
+  }
+  questAndAnswer.push([quest, answer]);
+
+  return questAndAnswer;
 }
+
+export default () => {
+  gameEngine(description, getQuestAndAnswer);
+};
