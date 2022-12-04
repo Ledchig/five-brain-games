@@ -1,4 +1,4 @@
-import getRandomNumber from '../getRandomNumber.js';
+import getRandomNumber from '../utils.js';
 import gameEngine from '../index.js';
 
 // Задача игры.
