@@ -14,25 +14,19 @@ function getRandomOperation(arrayWithOperations) {
 }
 
 // Логика получения верного ответа.
-function solveExpression(firstNumber, secondNumber, operation) {
-  let correctAnswer = 0;
+function calculate(firstNumber, secondNumber, operation) {
   switch (operation) {
     case '+':
-      correctAnswer = firstNumber + secondNumber;
-      return correctAnswer.toString();
+      return (firstNumber + secondNumber).toString();
     case '-':
-      correctAnswer = firstNumber - secondNumber;
-      return correctAnswer.toString();
+      return (firstNumber - secondNumber).toString();
     default:
-      correctAnswer = firstNumber * secondNumber;
-      return correctAnswer.toString();
+      return (firstNumber * secondNumber).toString();
   }
 }
 
 // Генерируем массив с вопросами и ответами.
 function getQuestAndAnswer() {
-  let quest = '';
-  let answer = '';
   let firstNumber = 0;
   let secondNumber = 0;
   let operation = '';
@@ -40,11 +34,10 @@ function getQuestAndAnswer() {
   firstNumber = getRandomNumber(0, 10);
   secondNumber = getRandomNumber(0, 10);
   operation = getRandomOperation(operations);
-  quest = `${firstNumber} ${operation} ${secondNumber} = ?`;
-  answer = solveExpression(firstNumber, secondNumber, operation);
-  questAndAnswer.push(quest, answer);
+  let question = `${firstNumber} ${operation} ${secondNumber} = ?`;
+  let correctAnswer = calculate(firstNumber, secondNumber, operation);
 
-  return questAndAnswer;
+  return [question, correctAnswer];
 }
 
 export default () => {

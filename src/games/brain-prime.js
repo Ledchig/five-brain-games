@@ -16,14 +16,10 @@ function isTheNumberPrime(number) {
 
 // Получаем массив вопросов и ответов.
 function getQuestAndAnswer() {
-  let quest = 0;
-  let answer = '';
-  const questAndAnswer = [];
+  let question = getRandomNumber(0, 100);
+  let correctAnswer = isTheNumberPrime(question) ? 'yes' : 'no';
 
-  quest = getRandomNumber(0, 100);
-  answer = isTheNumberPrime(quest) ? 'yes' : 'no';
-  questAndAnswer.push(quest, answer);
-  return questAndAnswer;
+  return [question, correctAnswer];
 }
 
 export default () => {

@@ -11,14 +11,10 @@ function isEven(number) {
 
 // Генерируем массив вопросов и ответов.
 function getQuestAndAnswer() {
-  let quest = 0;
-  let answer = '';
-  const questAndAnswer = [];
-  quest = getRandomNumber(0, 1000);
-  answer = isEven(quest) ? 'yes' : 'no';
-  questAndAnswer.push(quest, answer);
+  let question = getRandomNumber(0, 1000);
+  let correctAnswer = isEven(question) ? 'yes' : 'no';
 
-  return questAndAnswer;
+  return [question, correctAnswer];
 }
 
 export default () => {
