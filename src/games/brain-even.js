@@ -11,8 +11,8 @@ function isEven(number) {
 
 // Генерируем массив вопросов и ответов.
 function getQuestAndAnswer() {
-  let question = getRandomNumber(0, 1000);
-  let correctAnswer = isEven(question) ? 'yes' : 'no';
+  const question = getRandomNumber(0, 1000);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 }

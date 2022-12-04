@@ -6,10 +6,11 @@ const description = 'What number is missing in the progression?';
 
 // Создание массива с прогрессией.
 function getProgression(firstNumber, step, progressionLength = 10) {
-  const progression = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(firstNumber);
-    firstNumber = firstNumber + step;
+  const progression = [firstNumber];
+  let nextNumber = firstNumber + step;
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(nextNumber);
+    nextNumber += step;
   }
   return progression;
 }
@@ -23,10 +24,10 @@ function getQuestAndAnswer() {
     numOfElementIsHide += 2;
   }
   const step = progression[1] - progression[0];
-  let correctAnswer = `${progression[numOfElementIsHide - 1] + step}`;
+  const correctAnswer = `${progression[numOfElementIsHide - 1] + step}`;
   progression[numOfElementIsHide] = '..';
   // Превращаем его в строку для вопроса.
-  let question = progression.join(' ');
+  const question = progression.join(' ');
 
   return [question, correctAnswer];
 }

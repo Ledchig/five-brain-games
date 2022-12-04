@@ -16,8 +16,8 @@ function isTheNumberPrime(number) {
 
 // Получаем массив вопросов и ответов.
 function getQuestAndAnswer() {
-  let question = getRandomNumber(1, 100);
-  let correctAnswer = isTheNumberPrime(question) ? 'yes' : 'no';
+  const question = getRandomNumber(1, 100);
+  const correctAnswer = isTheNumberPrime(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 }

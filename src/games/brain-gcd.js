@@ -23,11 +23,10 @@ function getGcd(firstNumber, secondNumber) {
 
 // Создание массива с вопросами и ответами.
 function getQuestAndAnswer() {
-  const questAndAnswer = [];
-  let firstNumber = getRandomNumber(1, 50);
-  let secondNumber = getRandomNumber(1, 50);
-  let question = `${firstNumber} ${secondNumber}`;
-  let correctAnswer = `${getGcd(firstNumber, secondNumber)}`;
+  const firstNumber = getRandomNumber(1, 50);
+  const secondNumber = getRandomNumber(1, 50);
+  const question = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = `${getGcd(firstNumber, secondNumber)}`;
 
   return [question, correctAnswer];
 }

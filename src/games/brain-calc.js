@@ -30,12 +30,11 @@ function getQuestAndAnswer() {
   let firstNumber = 0;
   let secondNumber = 0;
   let operation = '';
-  const questAndAnswer = [];
   firstNumber = getRandomNumber(0, 10);
   secondNumber = getRandomNumber(0, 10);
   operation = getRandomOperation(operations);
-  let question = `${firstNumber} ${operation} ${secondNumber} = ?`;
-  let correctAnswer = calculate(firstNumber, secondNumber, operation);
+  const question = `${firstNumber} ${operation} ${secondNumber} = ?`;
+  const correctAnswer = calculate(firstNumber, secondNumber, operation);
 
   return [question, correctAnswer];
 }
