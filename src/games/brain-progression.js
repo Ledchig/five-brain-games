@@ -3,9 +3,10 @@ import gameEngine from '../index.js';
 
 // Задача игры.
 const description = 'What number is missing in the progression?';
+const progressionLength = 10;
 
 // Создание массива с прогрессией.
-function getProgression(firstNumber, step, progressionLength = 10) {
+function getProgression(firstNumber, step) {
   const progression = [firstNumber];
   let nextNumber = firstNumber + step;
   for (let i = 1; i < progressionLength; i += 1) {
@@ -17,18 +18,15 @@ function getProgression(firstNumber, step, progressionLength = 10) {
 
 // Получаем ответы и вопросы.
 function getQuestAndAnswer() {
-  const progression = getProgression(getRandomNumber(0, 50), getRandomNumber(3, 15));
-  // Определяем какое число прячем и записываем его в ответ.
-  let numOfElementIsHide = getRandomNumber(0, progression.length);
-  if (numOfElementIsHide === 0 || numOfElementIsHide === 1) {
-    numOfElementIsHide += 2;
-  }
-  const step = progression[1] - progression[0];
-  const correctAnswer = `${progression[numOfElementIsHide - 1] + step}`;
-  progression[numOfElementIsHide] = '..';
-  // Превращаем его в строку для вопроса.
-  const question = progression.join(' ');
+  const startNum = getRandomNumber(0, 50);
+  const step = getRandomNumber(2, 9);
+  const progression = getProgression(startNum, step);
+  const randomIndex = getRandomNumber(0, 9);
 
+  const correctAnswer = String(progression[randomIndex]);
+  progression[randomIndex] = '..';
+  const question = progression.join(' ');
+  
   return [question, correctAnswer];
 }
 
