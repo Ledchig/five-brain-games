@@ -26,7 +26,7 @@ function getQuestAndAnswer() {
   const correctAnswer = String(progression[randomIndex]);
   progression[randomIndex] = '..';
   const question = progression.join(' ');
-  
+
   return [question, correctAnswer];
 }
 
